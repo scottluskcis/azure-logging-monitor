@@ -5,6 +5,23 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingAPI", "LoggingAPI\LoggingAPI.csproj", "{9D66665B-87DC-4150-A94F-0D8E1451D891}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ops", "Ops", "{83644586-AA28-4A41-BB9B-6B4F8554D204}"
+	ProjectSection(SolutionItems) = preProject
+		Operations\azure-deploy.json = Operations\azure-deploy.json
+		Operations\azure-deploy.parameters.json = Operations\azure-deploy.parameters.json
+		Operations\azure-deploy.parameters.local.json = Operations\azure-deploy.parameters.local.json
+		Operations\azure-deploy.ps1 = Operations\azure-deploy.ps1
+		azure-pipelines.yml = azure-pipelines.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dev", "Dev", "{045BB0DF-34C1-4EDA-9A7A-3A789F28AACD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF56FCCB-9E24-4D90-A3AE-FDA631758CE4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D66665B-87DC-4150-A94F-0D8E1451D891} = {045BB0DF-34C1-4EDA-9A7A-3A789F28AACD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EF9D16D-874B-47A6-987D-3FC5AADFC92E}
