@@ -6,7 +6,7 @@
     Deploys an Azure Resource Manager template
 
  .EXAMPLE
-    ./deploy.ps1 -subscription "Azure Subscription" -resourceGroupName myresourcegroup -resourceGroupLocation centralus
+    ./azure-deploy.ps1 -subscription "Azure Subscription" -resourceGroupName myresourcegroup -resourceGroupLocation centralus
 
  .PARAMETER Subscription
     The subscription name or id where the template will be deployed.
