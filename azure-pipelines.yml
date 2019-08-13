@@ -4,8 +4,8 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   vmImageName: 'ubuntu-latest'
-  webAppName: 'demo-azure-logging'
-  subscription: 'demologgingconn'
+  webAppName: $(appServiceName)
+  subscription: $(serviceConnection)
   outputDirectory: '$(Build.ArtifactStagingDirectory)'
   buildArtifactName: 'drop'
 
