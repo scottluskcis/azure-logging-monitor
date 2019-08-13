@@ -5,7 +5,7 @@ variables:
   buildConfiguration: 'Release'
   vmImageName: 'ubuntu-latest'
   webAppName: 'LoggingAPI'
-  subscription: '$(AzureSubscription)'
+  subscription: 'demologgingconn'
   outputDirectory: '$(Build.ArtifactStagingDirectory)'
   buildArtifactName: 'drop'
 
