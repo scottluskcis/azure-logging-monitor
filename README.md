@@ -9,7 +9,7 @@ Example of logging in Azure using [Application Insights](https://docs.microsoft.
 Dev Stage
 [![Build Status](https://dev.azure.com/slusk/Azure%20Logging%20Demo/_apis/build/status/scottluskcis.azure-logging-monitor?branchName=master)](https://dev.azure.com/slusk/Azure%20Logging%20Demo/_build/latest?definitionId=13&branchName=master)
 
-## Running this Example
+## Setup for Running this Example
 
 ### Provision Azure Resources
 
@@ -36,3 +36,7 @@ Dev Stage
 * You will need to create a [Service Connection](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops). This Service Connection is referenced in the [azure-pipelines.yml](azure-pipelines.yml) file in the `subscription` variable. 
 * Additionally you will need to create a pipeline variable named `appServiceName` with the value that corresponds to what was specified in `azure-deploy.parameters.local.json` file
 * You may need to also authorize your Service Connection to have access to the Resource Group that contains the [provisioned resources](#provision-azure-resources)
+
+## Simple Example using Logging
+
+The first and simplest example of logging is to use the [LoggingAPI] project which is a really simple example to quickly get a log message into AppInsights.
