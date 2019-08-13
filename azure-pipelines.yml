@@ -4,6 +4,7 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   vmImageName: 'ubuntu-latest'
+  webappname: 'LoggingAPI'
 
 stages:
 - stage: Build
@@ -17,3 +18,8 @@ stages:
     steps:
     - script: dotnet build --configuration $(buildConfiguration)
       displayName: 'dotnet build $(buildConfiguration)'
+
+    - task: PublishPipelineArtifact@0
+      displayName: 'PublishPipelineArtifact: drop'
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/$(webappname).zip'
