@@ -1,4 +1,4 @@
-﻿using LoggingAPI.Logging;
+﻿using Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

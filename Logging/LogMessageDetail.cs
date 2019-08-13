@@ -1,4 +1,4 @@
-﻿namespace LoggingAPI.Logging
+﻿namespace Logging
 {
     public class LogMessageDetail
     {

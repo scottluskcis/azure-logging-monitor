@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provision", "Provision", "{
 		Operations\azure-deploy.ps1 = Operations\azure-deploy.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{9D66665B-87DC-4150-A94F-0D8E1451D891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D66665B-87DC-4150-A94F-0D8E1451D891}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D66665B-87DC-4150-A94F-0D8E1451D891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9D66665B-87DC-4150-A94F-0D8E1451D891} = {045BB0DF-34C1-4EDA-9A7A-3A789F28AACD}
 		{8FE64EDB-00B3-4542-9C36-C76B15F329B6} = {83644586-AA28-4A41-BB9B-6B4F8554D204}
+		{9D083FF0-4DD1-4EB1-851C-A241A19B7A2F} = {045BB0DF-34C1-4EDA-9A7A-3A789F28AACD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EF9D16D-874B-47A6-987D-3FC5AADFC92E}
