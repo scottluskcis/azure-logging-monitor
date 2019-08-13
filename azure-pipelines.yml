@@ -4,12 +4,16 @@ trigger:
 variables:
   buildConfiguration: 'Release'
   vmImageName: 'ubuntu-latest'
-  webappname: 'LoggingAPI'
-  subscription: ''
+  webAppName: 'LoggingAPI'
+  subscription: '$(AzureSubscription)'
   outputDirectory: '$(Build.ArtifactStagingDirectory)'
   buildArtifactName: 'drop'
 
 stages:
+
+# Continuous Integration (CI)
+
+# Build Stage
 - stage: Build
   displayName: Build Stage (CI)
   jobs:  
@@ -40,9 +44,39 @@ stages:
         arguments: '--configuration $(buildConfiguration) --output $(outputDirectory)'
         zipAfterPublish: True
 
-    - task: PublishBuildArtifacts@1
+    - task: PublishPipelineArtifact@0
       displayName: 'Publish Build Artifacts'
       inputs:
-        pathtoPublish: '$(outputDirectory)'
+        targetPath: '$(outputDirectory)'
         artifactName: '$(buildArtifactName)'
 
+# Continuous Delivery (CD)
+
+# Development Stage
+- stage: Dev 
+  displayName: Dev Stage (CD)
+  dependsOn: 'Build'
+  condition: succeeded('Build')
+  jobs:
+  - deployment: 'Dev'
+    displayName: 'Dev'
+    environment: 'development'
+    pool: 
+      vmImage: $(vmImageName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: DownloadPipelineArtifact@1
+            displayName: 'Download Pipeline Artifact'
+            inputs:
+              buildType: 'current'
+
+          - task: AzureWebApp@1
+            displayName: 'Deploy $(webAppName) to Azure Web App'
+            inputs: 
+              azureSubscription: '$(subscription)'
+              appType: 'webApp',
+              appName: '$(webAppName)'
+              package: '$(System.ArtifactsDirectory)/$(buildArtifactName)/$(webAppName).zip'
+              deploymentMethod: 'zipDeploy'
