@@ -73,10 +73,10 @@ stages:
               buildType: 'current'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy $(webAppName) to Azure Web App'
+            displayName: 'Deploy LoggingAPI to Azure Web App $(webAppName)'
             inputs: 
               azureSubscription: '$(subscription)'
               appType: 'webApp'
               appName: '$(webAppName)'
-              package: '$(System.ArtifactsDirectory)/$(buildArtifactName)/*.zip'
+              package: '$(System.ArtifactsDirectory)/$(buildArtifactName)/LoggingAPI.zip'
               deploymentMethod: 'zipDeploy'
