@@ -76,7 +76,7 @@ stages:
             displayName: 'Deploy $(webAppName) to Azure Web App'
             inputs: 
               azureSubscription: '$(subscription)'
-              appType: 'webApp',
+              appType: 'webApp'
               appName: '$(webAppName)'
               package: '$(System.ArtifactsDirectory)/$(buildArtifactName)/$(webAppName).zip'
               deploymentMethod: 'zipDeploy'
