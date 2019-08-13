@@ -5,7 +5,7 @@ variables:
   buildConfiguration: 'Release'
   vmImageName: 'ubuntu-latest'
   webAppName: $(appServiceName)
-  subscription: $(serviceConnection)
+  subscription: 'demologgingconn'
   outputDirectory: '$(Build.ArtifactStagingDirectory)'
   buildArtifactName: 'drop'
 
